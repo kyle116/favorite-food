@@ -6,13 +6,16 @@ const
   mongoose = require("mongoose");
   
 const app = express();
+// Helps to redirect to routes when endpoint is hit
+const users = require("./routes/users")
 
 // Port Number
-const PORT = 3000;
+const PORT = 8080;
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use("/users", users)
 
 // Index Route
 app.get("/", (req, res) => {
