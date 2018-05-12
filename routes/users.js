@@ -12,7 +12,7 @@ router.post("/signup", usersCtrl.signup)
 // Authenticate
 router.post("/authenticate", usersCtrl.authenticate)
 
-// Profile
-router.get("/profile", usersCtrl.show)
+// Profile with protected route
+router.get("/profile", passport.authenticate("jwt", {session: false}), usersCtrl.show)
 
 module.exports = router;
