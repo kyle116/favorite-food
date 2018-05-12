@@ -1,7 +1,10 @@
 const
     express = require("express"),
     router = express.Router(),
-    usersCtrl = require("../controllers/users")
+    usersCtrl = require("../controllers/users"),
+    User = require("../models/User"),
+    passport = require("passport"),
+    jwt = require("jsonwebtoken");
 
 // Signup
 router.post("/signup", usersCtrl.signup)
