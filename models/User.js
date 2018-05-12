@@ -5,10 +5,12 @@ const
 
 // User Schema
   UserSchema = mongoose.Schema({
-    firstName: {type: String},
-    lastName: {type: String},
-    email: {type: String, required: true, unique: true},
+    firstName: {type: String, required: true},
+    lastName: {type: String, required: true},
+    age: {type: Number, required: true, min: 0, max: 200},
+    favoriteFood: {type: String, required: true},
     username: {type: String, required: true},
+    email: {type: String, required: true, unique: true},
     password: {type: String, required: true}
   }),
 
