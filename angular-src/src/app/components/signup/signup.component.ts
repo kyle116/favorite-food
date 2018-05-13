@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidateService } from '../../services/validate.service';
+import { AuthService } from '../../services/auth.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +18,12 @@ export class SignupComponent implements OnInit {
   email: String;
   password: String;
 
-  constructor(private validateService: ValidateService, private _flashMessagesService: FlashMessagesService) { }
+  constructor(
+    private validateService: ValidateService,
+    private _flashMessagesService: FlashMessagesService,
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -43,5 +50,18 @@ export class SignupComponent implements OnInit {
       this._flashMessagesService.show("Please use valid email", {cssClass: "alert-danger", timeout: 3000});
       return false;
     }
+
+    // Create user
+    this.authService.signupUser(user).subscribe(data => {
+    console.log(data)
+      if(data.success) {
+        this._flashMessagesService.show("Signup Success! You can now login.", {cssClass: "alert-success", timeout: 3000});
+        this.router.navigate(["/login"]);
+      } else {
+        this._flashMessagesService.show("Something went wrong", {cssClass: "alert-danger", timeout: 3000});
+        this.router.navigate(["/signup"]);
+      }
+    });
+
   }
 }

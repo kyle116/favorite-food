@@ -9,6 +9,8 @@ function signup(req, res, next) {
   let newUser = new User({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
+    age: req.body.age,
+    favoriteFood: req.body.favoriteFood,
     email: req.body.email,
     username: req.body.username,
     password: req.body.password
