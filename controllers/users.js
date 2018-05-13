@@ -21,7 +21,7 @@ function signup(req, res, next) {
       console.log(err);
       res.json({success: false, msg: "Failed to signup"});
     } else {
-      res.json({success: true, msg: "User created"})
+      res.json({success: true, msg: "User created"});
     }
   });
 
@@ -67,9 +67,16 @@ function show(req, res, next) {
   res.json({user: req.user});
 }
 
+function deleteUser(req, res, next) {
+  User.deleteUser(req.params.id, (err, user) => {
+    if(err) throw err;
+    res.json({success: true, msg: "User deleted"});
+  })
+}
 
 module.exports = {
   signup,
   authenticate,
-  show
+  show,
+  deleteUser
 }

@@ -41,3 +41,7 @@ module.exports.comparePassword = function(candidatePassword, hash, callback) {
     callback(null, isMatch);
   });
 }
+
+module.exports.deleteUser = function(id, callback) {
+  User.findByIdAndRemove(id, callback);
+}

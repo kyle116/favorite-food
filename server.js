@@ -41,6 +41,11 @@ app.get("/", (req, res) => {
   res.send("Invalid end")
 })
 
+// Default Route
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "angular-src/index.html"))
+})
+
 app.listen(PORT, () => {
   console.log(`Server started on ${PORT}`)
 })

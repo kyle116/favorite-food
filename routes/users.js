@@ -15,4 +15,7 @@ router.post("/authenticate", usersCtrl.authenticate)
 // Profile with protected route
 router.get("/profile", passport.authenticate("jwt", {session: false}), usersCtrl.show)
 
+// Delete user
+router.delete("/profile/:id", usersCtrl.deleteUser)
+
 module.exports = router;

@@ -57,4 +57,11 @@ export class AuthService {
     localStorage.clear();
   }
 
+  deleteUser(id) {
+    let headers = new Headers();
+    headers.append("Content-Type", "application/json");
+    return this.http.delete("http://localhost:3000/users/profile/" + id, {headers: headers})
+      .pipe(map(res => res.json()));
+  }
+
 }

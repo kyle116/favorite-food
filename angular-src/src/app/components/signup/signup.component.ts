@@ -53,7 +53,6 @@ export class SignupComponent implements OnInit {
 
     // Create user
     this.authService.signupUser(user).subscribe(data => {
-    console.log(data)
       if(data.success) {
         this._flashMessagesService.show("Signup Success! You can now login.", {cssClass: "alert-success", timeout: 3000});
         this.router.navigate(["/login"]);
