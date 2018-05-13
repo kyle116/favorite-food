@@ -1,4 +1,4 @@
 module.exports = {
-    database: "mongodb://kyle:pass@ds121950.mlab.com:21950/favoritefood",
+    database: process.env.MONGO_URL,
     secret: "supersecret"
 }
