@@ -11,14 +11,21 @@
     </ul>
 
     <ul class="navbar-nav navbar-right">
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
+      </li>
+      <li *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" [routerLink]="['/profile']">Profile</a>
+      </li>
+
+      <li *ngIf="!authService.loggedIn()"[routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
         <a class="nav-link" [routerLink]="['/signup']">Signup</a>
       </li>
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+      <li *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
         <a class="nav-link" [routerLink]="['/login']">Login</a>
       </li>
-      <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-        <a class="nav-link" >Logout</a>
+      <li *ngIf="authService.loggedIn()">
+        <a class="nav-link" (click)="onLogoutClick()" href="#">Logout</a>
       </li>
     </ul>
 
