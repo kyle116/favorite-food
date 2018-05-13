@@ -1,33 +1,33 @@
 <h2 class="page-header">Sign Up</h2>
-<form>
+<form (submit)="onSignupSubmit()" novalidate>
   <div class="form-group">
     <label for="firstName">First Name</label>
     <input type="text" [(ngModel)]="firstName" name="firstName" class="form-control" id="firstName" placeholder="First Name">
   </div>
   <div class="form-group">
     <label for="lastName">Last Name</label>
-    <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+    <input type="text" [(ngModel)]="lastName" name="lastName" class="form-control" id="lastName" placeholder="Last Name">
   </div>
   <div class="form-group">
     <label for="age">Age</label>
-    <input type="number" class="form-control" id="age" placeholder="Age" min="0" max="200">
+    <input type="number" [(ngModel)]="age" name="age" class="form-control" id="age" placeholder="Age" min="0" max="200">
   </div>
   <div class="form-group">
     <label for="favoriteFood">What is your Favorite Food?</label>
-    <input type="text" class="form-control" id="favoriteFood" placeholder="Favorite Food">
+    <input type="text" [(ngModel)]="favoriteFood" name="favoriteFood" class="form-control" id="favoriteFood" placeholder="Favorite Food">
   </div>
   <div class="form-group">
     <label for="username">Username</label>
-    <input type="text" class="form-control" id="username" placeholder="Username">
+    <input type="text" [(ngModel)]="username" name="username" class="form-control" id="username" placeholder="Username">
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" [(ngModel)]="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="password" [(ngModel)]="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
