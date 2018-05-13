@@ -5,6 +5,7 @@ const
   cors = require("cors"),
   passport = require("passport"),
   mongoose = require("mongoose"),
+  dotenv = require('dotenv').load(),
   config = require("./config/database");
 
 
