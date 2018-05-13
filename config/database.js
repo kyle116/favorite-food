@@ -1,4 +1,4 @@
 module.exports = {
-    database: process.env.MONGO_URL,
+    database: process.env.MONGO_URI,
     secret: "supersecret"
 }
