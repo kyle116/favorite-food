@@ -15,7 +15,8 @@ export class UpdateComponent implements OnInit {
     lastName: "",
     age: "",
     favoriteFood: "",
-    email: ""
+    email: "",
+    password: ""
   };
 
   constructor(
@@ -27,6 +28,7 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit() {
     this.authService.getProfile().subscribe(profile => {
+      profile.user.password = "";
       this.user = profile.user;
     },
     err => {

@@ -75,7 +75,7 @@ function deleteUser(req, res, next) {
 }
 
 function updateUser(req, res, next) {
-  User.updateUser(req.user._id, req.body,  (err, user) => {
+  User.updateUser(req.user._id, req.body, (err, user) => {
     if(err) throw err;
     return res.json({success: true, msg: "Update"});
   })
