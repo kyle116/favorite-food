@@ -5473,7 +5473,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/kyleliu/code/my_code/ssai interview/favorite-food/angular-src/src/polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/favorite-food/angular-src/src/polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })
