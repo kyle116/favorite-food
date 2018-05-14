@@ -11,6 +11,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 export class ProfileComponent implements OnInit {
   user: Object;
   userId: String;
+  currentUserId: String;
 
   constructor(
     private authService: AuthService,
@@ -21,16 +22,22 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
-        this.userId = params["id"];
+      this.userId = params["id"];
     });
+
+    this.authService.getProfile(false).subscribe(profile => {
+      this.currentUserId = profile.user._id;
+    })
 
     this.authService.getProfile(this.userId).subscribe(profile => {
       this.user = profile.user;
+      this.userId = profile.user._id
     },
     err => {
       console.log(err);
       return false;
     });
+
   }
 
   deleteUser(id) {
