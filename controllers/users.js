@@ -63,8 +63,15 @@ function authenticate(req, res, next) {
   });
 }
 
-function show(req, res, next) {
+function showCurrentUser(req, res, next) {
   res.json({user: req.user});
+}
+
+function show(req, res, next) {
+  User.getUserById(req.params.id, (err, user) => {
+    res.json({user: user});
+  })
+
 }
 
 function deleteUser(req, res, next) {
@@ -81,10 +88,19 @@ function updateUser(req, res, next) {
   })
 }
 
+function getUsers(req, res, next) {
+  User.getUsers((err, allUsers) => {
+    if(err) throw err;
+    return res.json({success: true, msg: "All users returned", users: allUsers});
+  })
+}
+
 module.exports = {
   signup,
   authenticate,
   show,
   deleteUser,
-  updateUser
+  updateUser,
+  getUsers,
+  showCurrentUser
 }

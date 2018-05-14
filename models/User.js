@@ -70,3 +70,7 @@ module.exports.updateUser = function(id, data, callback) {
     callback(err, updatedUser);
   })
 }
+
+module.exports.getUsers = function(callback) {
+  User.find({}, callback);
+}

@@ -1,2 +1,20 @@
 <h2 class="page-header">Dashboard</h2>
 <p>Welcome to your dashboard. Here are the other users on the Favorite Food App</p>
+<div class="row">
+  <div *ngFor="let user of users">
+
+    <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ user.firstName + " " + user.lastName}}</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Age: {{ user.age }}</li>
+            <li class="list-group-item">Favorite Food: {{ user.favoriteFood }}</li>
+          </ul>
+          <a [routerLink]="['/profile', user._id]" class="btn btn-primary">View Profile</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

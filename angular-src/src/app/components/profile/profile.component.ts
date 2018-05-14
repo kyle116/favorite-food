@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute, Params } from "@angular/router";
 import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
@@ -10,15 +10,21 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 })
 export class ProfileComponent implements OnInit {
   user: Object;
+  userId: String;
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    private _flashMessagesService: FlashMessagesService
+    private _flashMessagesService: FlashMessagesService,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.authService.getProfile().subscribe(profile => {
+    this.activatedRoute.params.subscribe((params: Params) => {
+        this.userId = params["id"];
+    });
+
+    this.authService.getProfile(this.userId).subscribe(profile => {
       this.user = profile.user;
     },
     err => {

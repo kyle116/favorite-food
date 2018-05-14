@@ -27,7 +27,7 @@ export class UpdateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.authService.getProfile().subscribe(profile => {
+    this.authService.getProfile(false).subscribe(profile => {
       profile.user.password = "";
       this.user = profile.user;
     },

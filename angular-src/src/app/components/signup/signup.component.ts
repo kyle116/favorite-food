@@ -64,8 +64,6 @@ export class SignupComponent implements OnInit {
             this.router.navigate(["login"]);
           }
         })
-        // this._flashMessagesService.show("Signup Success! You can now login.", {cssClass: "alert-success", timeout: 2000});
-        // this.router.navigate(["/login"]);
       } else {
         this._flashMessagesService.show("Something went wrong", {cssClass: "alert-danger", timeout: 2000});
         this.router.navigate(["/signup"]);
