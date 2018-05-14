@@ -54,8 +54,18 @@ export class SignupComponent implements OnInit {
     // Create user
     this.authService.signupUser(user).subscribe(data => {
       if(data.success) {
-        this._flashMessagesService.show("Signup Success! You can now login.", {cssClass: "alert-success", timeout: 2000});
-        this.router.navigate(["/login"]);
+        this.authService.authenticateUser(user).subscribe(loggedInData => {
+          if(loggedInData.success) {
+            this.authService.storeUserData(loggedInData.token, loggedInData.user);
+            this._flashMessagesService.show("Signup Success! You are now logged in", {cssClass: "alert-success", timeout: 2000});
+            this.router.navigate(["dashboard"]);
+          } else {
+            this._flashMessagesService.show(loggedInData.msg, {cssClass: "alert-danger", timeout: 2000});
+            this.router.navigate(["login"]);
+          }
+        })
+        // this._flashMessagesService.show("Signup Success! You can now login.", {cssClass: "alert-success", timeout: 2000});
+        // this.router.navigate(["/login"]);
       } else {
         this._flashMessagesService.show("Something went wrong", {cssClass: "alert-danger", timeout: 2000});
         this.router.navigate(["/signup"]);

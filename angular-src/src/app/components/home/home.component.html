@@ -1,7 +1,13 @@
 <main role="main" class="container">
   <div class="jumbotron">
     <h1>Favorite Food App</h1>
-    <p class="lead">Welcome to the Favorite Food App. Sign up to get started!</p>
-    <a class="btn btn-primary" role="button" [routerLink]="['/signup']">Signup!</a>
+    <div *ngIf="!authService.loggedIn()">
+      <p class="lead">Welcome to the Favorite Food App. Sign up to get started!</p>
+       <a class="btn btn-primary" role="button" [routerLink]="['/signup']">Signup!</a>
+    </div>
+    <div *ngIf="authService.loggedIn()">
+      <p class="lead">Welcome to the Favorite Food App. Go to your dashboard to see others on the app!</p>
+       <a class="btn btn-primary" role="button" [routerLink]="['/dashboard']">Dashboard</a>
+    </div>
   </div>
 </main>

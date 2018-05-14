@@ -5473,7 +5473,11 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\kliu\Documents\favorite-food\angular-src\src\polyfills.ts */"./src/polyfills.ts");
+=======
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/favorite-food/angular-src/src/polyfills.ts */"./src/polyfills.ts");
+>>>>>>> 828b1b8ff5bc4b60a7d86bc54c80e76073c16774
 
 
 /***/ })

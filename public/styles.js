@@ -539,7 +539,11 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\kliu\Documents\favorite-food\angular-src\src\styles.css */"./src/styles.css");
+=======
+module.exports = __webpack_require__(/*! /home/ec2-user/environment/favorite-food/angular-src/src/styles.css */"./src/styles.css");
+>>>>>>> 828b1b8ff5bc4b60a7d86bc54c80e76073c16774
 
 
 /***/ })
