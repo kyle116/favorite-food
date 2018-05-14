@@ -47,8 +47,6 @@ module.exports.deleteUser = function(id, callback) {
 }
 
 module.exports.updateUser = function(id, data, callback) {
-  // User.findByIdAndUpdate(user.id, data, {new: true}, callback);
-
   User.findById(id, (err, updatedUser) => {
     if(err) throw err;
     updatedUser.firstName = data.firstName;
