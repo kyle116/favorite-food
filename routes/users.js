@@ -18,4 +18,7 @@ router.get("/profile", passport.authenticate("jwt", {session: false}), usersCtrl
 // Delete user
 router.delete("/profile/:id", usersCtrl.deleteUser)
 
+// Update user
+router.put("/update/:id", passport.authenticate("jwt", {session: false}), usersCtrl.updateUser)
+
 module.exports = router;

@@ -45,3 +45,21 @@ module.exports.comparePassword = function(candidatePassword, hash, callback) {
 module.exports.deleteUser = function(id, callback) {
   User.findByIdAndRemove(id, callback);
 }
+
+module.exports.updateUser = function(id, data, callback) {
+  // User.findByIdAndUpdate(user.id, data, {new: true}, callback);
+
+  User.findById(id, (err, updatedUser) => {
+    if(err) throw err;
+    updatedUser.firstName = data.firstName;
+    updatedUser.lastName = data.lastName;
+    updatedUser.age = data.age;
+    updatedUser.favoriteFood = data.favoriteFood;
+    updatedUser.username = data.username;
+    updatedUser.email = data.email;
+    updatedUser.password = data.password;
+
+    updatedUser.save();
+    callback(err, updatedUser);
+  })
+}
