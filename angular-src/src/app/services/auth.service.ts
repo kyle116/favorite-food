@@ -15,14 +15,14 @@ export class AuthService {
   signupUser(user) {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
-    return this.http.post("users/signup", user, {headers: headers})
+    return this.http.post("http://localhost:8080/users/signup", user, {headers: headers})
       .pipe(map(res => res.json()));
   }
 
   authenticateUser(user) {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
-    return this.http.post("users/authenticate", user, {headers: headers})
+    return this.http.post("http://localhost:8080/users/authenticate", user, {headers: headers})
       .pipe(map(res => res.json()));
   }
 
@@ -31,7 +31,7 @@ export class AuthService {
     this.loadToken();
     headers.append("Authorization", this.authToken);
     headers.append("Content-Type", "application/json");
-    return this.http.get("users/profile", {headers: headers})
+    return this.http.get("http://localhost:8080/users/profile", {headers: headers})
       .pipe(map(res => res.json()));
   }
 
@@ -60,7 +60,7 @@ export class AuthService {
   deleteUser(id) {
     let headers = new Headers();
     headers.append("Content-Type", "application/json");
-    return this.http.delete("users/profile/" + id, {headers: headers})
+    return this.http.delete("http://localhost:8080/users/profile/" + id, {headers: headers})
       .pipe(map(res => res.json()));
   }
 
@@ -69,7 +69,7 @@ export class AuthService {
     this.loadToken();
     headers.append("Authorization", this.authToken);
     headers.append("Content-Type", "application/json");
-    return this.http.put("users/update/" + user._id, user, {headers: headers})
+    return this.http.put("http://localhost:8080/users/update/" + user._id, user, {headers: headers})
       .pipe(map(res => res.json()));
   }
 

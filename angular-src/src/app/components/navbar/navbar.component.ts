@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
 
   onLogoutClick() {
     this.authService.logout();
-    this._flashMessagesService.show("You have logged out", {cssClass: "alert-success", timeout: 3000});
+    this._flashMessagesService.show("You have logged out", {cssClass: "alert-success", timeout: 2000});
     this.router.navigate(["/login"]);
     return false;
   }

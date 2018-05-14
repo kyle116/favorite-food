@@ -55,7 +55,15 @@ module.exports.updateUser = function(id, data, callback) {
     updatedUser.favoriteFood = data.favoriteFood;
     updatedUser.username = data.username;
     updatedUser.email = data.email;
-    updatedUser.password = data.password;
+
+    // bcrypt.genSalt(10, (err, salt) => {
+    //   bcrypt.hash(data.password, salt, (err, hash) => {
+    //     if(err) throw err;
+    //     updatedUser.password = hash;
+    //     updatedUser.save();
+    //   })
+    // })
+    // updatedUser.password = data.password;
 
     updatedUser.save();
     callback(err, updatedUser);

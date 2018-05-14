@@ -38,23 +38,23 @@ export class UpdateComponent implements OnInit {
   onUpdateSubmit() {
     // Required Fields
     if(!this.validateService.validateSignup(this.user)) {
-      this._flashMessagesService.show("Please fill in all fields", {cssClass: "alert-danger", timeout: 3000});
+      this._flashMessagesService.show("Please fill in all fields", {cssClass: "alert-danger", timeout: 2000});
       return false;
     }
 
     // Validate Email
     if(!this.validateService.validateEmail(this.user.email)) {
-      this._flashMessagesService.show("Please use valid email", {cssClass: "alert-danger", timeout: 3000});
+      this._flashMessagesService.show("Please use valid email", {cssClass: "alert-danger", timeout: 2000});
       return false;
     }
 
     // Update user
     this.authService.updateUser(this.user).subscribe(data => {
       if(data.success) {
-        this._flashMessagesService.show("Update Success!", {cssClass: "alert-success", timeout: 3000});
+        this._flashMessagesService.show("Update Success!", {cssClass: "alert-success", timeout: 2000});
         this.router.navigate(["/profile"]);
       } else {
-        this._flashMessagesService.show("Something went wrong", {cssClass: "alert-danger", timeout: 3000});
+        this._flashMessagesService.show("Something went wrong", {cssClass: "alert-danger", timeout: 2000});
         this.router.navigate(["/update"]);
       }
     });

@@ -31,10 +31,10 @@ export class ProfileComponent implements OnInit {
     this.authService.logout();
     this.authService.deleteUser(id).subscribe(data => {
       if(data.success) {
-        this._flashMessagesService.show("Your account has been deleted", {cssClass: "alert-success", timeout: 3000});
+        this._flashMessagesService.show("Your account has been deleted", {cssClass: "alert-success", timeout: 2000});
         this.router.navigate(["/"]);
       } else {
-        this._flashMessagesService.show("Something went wrong", {cssClass: "alert-danger", timeout: 3000});
+        this._flashMessagesService.show("Something went wrong", {cssClass: "alert-danger", timeout: 2000});
       }
     })
   }
