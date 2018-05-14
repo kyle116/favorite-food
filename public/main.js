@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<div class=\"container\">\n  <flash-messages></flash-messages>\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<app-navbar></app-navbar>\r\n<div class=\"container\">\r\n  <flash-messages></flash-messages>\r\n  <router-outlet></router-outlet>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -191,7 +191,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Dashboard</h2>\n<p>Welcome to your dashboard. Here are the other users on the Favorite Food App</p>\n"
+module.exports = "<h2 class=\"page-header\">Dashboard</h2>\r\n<p>Welcome to your dashboard. Here are the other users on the Favorite Food App</p>\r\n"
 
 /***/ }),
 
@@ -254,7 +254,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main role=\"main\" class=\"container\">\n  <div class=\"jumbotron\">\n    <h1>Favorite Food App</h1>\n    <p class=\"lead\">Welcome to the Favorite Food App. Sign up to get started!</p>\n    <a class=\"btn btn-primary\" role=\"button\" [routerLink]=\"['/signup']\">Signup!</a>\n  </div>\n</main>\n"
+module.exports = "<main role=\"main\" class=\"container\">\r\n  <div class=\"jumbotron\">\r\n    <h1>Favorite Food App</h1>\r\n    <p class=\"lead\">Welcome to the Favorite Food App. Sign up to get started!</p>\r\n    <a class=\"btn btn-primary\" role=\"button\" [routerLink]=\"['/signup']\">Signup!</a>\r\n  </div>\r\n</main>\r\n"
 
 /***/ }),
 
@@ -317,7 +317,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Login</h2>\n<form class=\"form-signin\" (submit)=\"onLoginSubmit()\">\n  <div class=\"form-group\">\n    <label for=\"Username\">Username</label>\n    <input type=\"text\" class=\"form-control\" placeholder=\"Enter Username\" [(ngModel)]=\"username\" name=\"username\">\n  </div>\n  <div class=\"form-group\">\n  <label for=\"Password\">Password</label>\n  <input type=\"password\" class=\"form-control\" placeholder=\" Enter Password\" [(ngModel)]=\"password\" name=\"password\">\n  </div>\n  <div class=\"checkbox\">\n    <label>\n      <input type=\"checkbox\" value=\"remember-me\"> Remember me\n    </label>\n  </div>\n  <input class=\"btn btn-lg btn-primary\" type=\"submit\" value=\"Login\">\n</form>\n"
+module.exports = "<h2 class=\"page-header\">Login</h2>\r\n<form class=\"form-signin\" (submit)=\"onLoginSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"Username\">Username</label>\r\n    <input type=\"text\" class=\"form-control\" placeholder=\"Enter Username\" [(ngModel)]=\"username\" name=\"username\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n  <label for=\"Password\">Password</label>\r\n  <input type=\"password\" class=\"form-control\" placeholder=\" Enter Password\" [(ngModel)]=\"password\" name=\"password\">\r\n  </div>\r\n  <input class=\"btn btn-lg btn-primary\" type=\"submit\" value=\"Login\">\r\n</form>\r\n"
 
 /***/ }),
 
@@ -366,11 +366,11 @@ var LoginComponent = /** @class */ (function () {
         this.authService.authenticateUser(user).subscribe(function (data) {
             if (data.success) {
                 _this.authService.storeUserData(data.token, data.user);
-                _this._flashMessagesService.show("You are now logged in", { cssClass: "alert-success", timeout: 5000 });
+                _this._flashMessagesService.show("You are now logged in", { cssClass: "alert-success", timeout: 2000 });
                 _this.router.navigate(["dashboard"]);
             }
             else {
-                _this._flashMessagesService.show(data.msg, { cssClass: "alert-danger", timeout: 5000 });
+                _this._flashMessagesService.show(data.msg, { cssClass: "alert-danger", timeout: 2000 });
                 _this.router.navigate(["login"]);
             }
         });
@@ -410,7 +410,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark  bg-dark\">\n  <a class=\"navbar-brand\" [routerLink]=\"['/']\">Favorite Food</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home <span class=\"sr-only\">(current)</span></a>\n      </li>\n    </ul>\n\n    <ul class=\"navbar-nav navbar-right\">\n      <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a>\n      </li>\n      <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\n      </li>\n\n      <li *ngIf=\"!authService.loggedIn()\"[routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/signup']\">Signup</a>\n      </li>\n      <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a>\n      </li>\n      <li *ngIf=\"authService.loggedIn()\">\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\n      </li>\n    </ul>\n\n    <form class=\"form-inline mt-2 mt-md-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" aria-label=\"Search\">\n      <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>\n    </form>\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark  bg-dark\">\r\n  <a class=\"navbar-brand\" [routerLink]=\"['/']\">Favorite Food</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home <span class=\"sr-only\">(current)</span></a>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav navbar-right\">\r\n      <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a>\r\n      </li>\r\n      <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\r\n      </li>\r\n\r\n      <li *ngIf=\"!authService.loggedIn()\"[routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/signup']\">Signup</a>\r\n      </li>\r\n      <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a>\r\n      </li>\r\n      <li *ngIf=\"authService.loggedIn()\">\r\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\r\n      </li>\r\n    </ul>\r\n\r\n  </div>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -452,7 +452,7 @@ var NavbarComponent = /** @class */ (function () {
     };
     NavbarComponent.prototype.onLogoutClick = function () {
         this.authService.logout();
-        this._flashMessagesService.show("You have logged out", { cssClass: "alert-success", timeout: 3000 });
+        this._flashMessagesService.show("You have logged out", { cssClass: "alert-success", timeout: 2000 });
         this.router.navigate(["/login"]);
         return false;
     };
@@ -491,7 +491,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.firstName + \" \" + user.lastName}}</h2>\n  <a class=\"\" [routerLink]=\"['/update']\">Edit Profile</a>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\n    <li class=\"list-group-item\">Favorite Food: {{user.favoriteFood}}</li>\n    <li class=\"list-group-item\">Age: {{user.age}}</li>\n  </ul>\n  <button type=\"button\" class=\"btn btn-danger\" (click)=\"deleteUser(user._id)\" name=\"button\">Delete</button>\n</div>\n"
+module.exports = "<div *ngIf=\"user\">\r\n  <h2 class=\"page-header\">{{user.firstName + \" \" + user.lastName}}</h2>\r\n  <a class=\"\" [routerLink]=\"['/update']\">Edit Profile</a>\r\n  <ul class=\"list-group\">\r\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\r\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\r\n    <li class=\"list-group-item\">Favorite Food: {{user.favoriteFood}}</li>\r\n    <li class=\"list-group-item\">Age: {{user.age}}</li>\r\n  </ul>\r\n  <button type=\"button\" class=\"btn btn-danger\" (click)=\"deleteUser(user._id)\" name=\"button\">Delete</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -543,11 +543,11 @@ var ProfileComponent = /** @class */ (function () {
         this.authService.logout();
         this.authService.deleteUser(id).subscribe(function (data) {
             if (data.success) {
-                _this._flashMessagesService.show("Your account has been deleted", { cssClass: "alert-success", timeout: 3000 });
+                _this._flashMessagesService.show("Your account has been deleted", { cssClass: "alert-success", timeout: 2000 });
                 _this.router.navigate(["/"]);
             }
             else {
-                _this._flashMessagesService.show("Something went wrong", { cssClass: "alert-danger", timeout: 3000 });
+                _this._flashMessagesService.show("Something went wrong", { cssClass: "alert-danger", timeout: 2000 });
             }
         });
     };
@@ -586,7 +586,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Sign Up</h2>\n<form (submit)=\"onSignupSubmit()\" novalidate>\n  <div class=\"form-group\">\n    <label for=\"firstName\">First Name</label>\n    <input type=\"text\" [(ngModel)]=\"firstName\" name=\"firstName\" class=\"form-control\" id=\"firstName\" placeholder=\"First Name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"lastName\">Last Name</label>\n    <input type=\"text\" [(ngModel)]=\"lastName\" name=\"lastName\" class=\"form-control\" id=\"lastName\" placeholder=\"Last Name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"age\">Age</label>\n    <input type=\"number\" [(ngModel)]=\"age\" name=\"age\" class=\"form-control\" id=\"age\" placeholder=\"Age\" min=\"0\" max=\"200\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"favoriteFood\">What is your Favorite Food?</label>\n    <input type=\"text\" [(ngModel)]=\"favoriteFood\" name=\"favoriteFood\" class=\"form-control\" id=\"favoriteFood\" placeholder=\"Favorite Food\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"username\">Username</label>\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\" id=\"username\" placeholder=\"Username\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputEmail1\">Email address</label>\n    <input type=\"email\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\n    <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">Password</label>\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\" id=\"exampleInputPassword1\" placeholder=\"Password\">\n  </div>\n  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n</form>\n"
+module.exports = "<h2 class=\"page-header\">Sign Up</h2>\r\n<form (submit)=\"onSignupSubmit()\" novalidate>\r\n  <div class=\"form-group\">\r\n    <label for=\"firstName\">First Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"firstName\" name=\"firstName\" class=\"form-control\" id=\"firstName\" placeholder=\"First Name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"lastName\">Last Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"lastName\" name=\"lastName\" class=\"form-control\" id=\"lastName\" placeholder=\"Last Name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"age\">Age</label>\r\n    <input type=\"number\" [(ngModel)]=\"age\" name=\"age\" class=\"form-control\" id=\"age\" placeholder=\"Age\" min=\"0\" max=\"200\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"favoriteFood\">What is your Favorite Food?</label>\r\n    <input type=\"text\" [(ngModel)]=\"favoriteFood\" name=\"favoriteFood\" class=\"form-control\" id=\"favoriteFood\" placeholder=\"Favorite Food\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"username\">Username</label>\r\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\" id=\"username\" placeholder=\"Username\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"exampleInputEmail1\">Email address</label>\r\n    <input type=\"email\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\r\n    <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"exampleInputPassword1\">Password</label>\r\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\" id=\"exampleInputPassword1\" placeholder=\"Password\">\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\r\n</form>\r\n"
 
 /***/ }),
 
@@ -642,22 +642,22 @@ var SignupComponent = /** @class */ (function () {
         };
         // Required Fields
         if (!this.validateService.validateSignup(user)) {
-            this._flashMessagesService.show("Please fill in all fields", { cssClass: "alert-danger", timeout: 3000 });
+            this._flashMessagesService.show("Please fill in all fields", { cssClass: "alert-danger", timeout: 2000 });
             return false;
         }
         // Validate Email
         if (!this.validateService.validateEmail(user.email)) {
-            this._flashMessagesService.show("Please use valid email", { cssClass: "alert-danger", timeout: 3000 });
+            this._flashMessagesService.show("Please use valid email", { cssClass: "alert-danger", timeout: 2000 });
             return false;
         }
         // Create user
         this.authService.signupUser(user).subscribe(function (data) {
             if (data.success) {
-                _this._flashMessagesService.show("Signup Success! You can now login.", { cssClass: "alert-success", timeout: 3000 });
+                _this._flashMessagesService.show("Signup Success! You can now login.", { cssClass: "alert-success", timeout: 2000 });
                 _this.router.navigate(["/login"]);
             }
             else {
-                _this._flashMessagesService.show("Something went wrong", { cssClass: "alert-danger", timeout: 3000 });
+                _this._flashMessagesService.show("Something went wrong", { cssClass: "alert-danger", timeout: 2000 });
                 _this.router.navigate(["/signup"]);
             }
         });
@@ -698,7 +698,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n<h2 class=\"page-header\">Edit your Profile</h2>\n<form (ngSubmit)=\"onUpdateSubmit()\" novalidate>\n  <div class=\"form-group\">\n    <label for=\"firstName\">First Name</label>\n    <input type=\"text\" [(ngModel)]=\"user.firstName\" name=\"firstName\" class=\"form-control\" id=\"firstName\" placeholder=\"First Name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"lastName\">Last Name</label>\n    <input type=\"text\" [(ngModel)]=\"user.lastName\" name=\"lastName\" class=\"form-control\" id=\"lastName\" placeholder=\"Last Name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"age\">Age</label>\n    <input type=\"number\" [(ngModel)]=\"user.age\" name=\"age\" class=\"form-control\" id=\"age\" placeholder=\"Age\" min=\"0\" max=\"200\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"favoriteFood\">What is your Favorite Food?</label>\n    <input type=\"text\" [(ngModel)]=\"user.favoriteFood\" name=\"favoriteFood\" class=\"form-control\" id=\"favoriteFood\" placeholder=\"Favorite Food\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"username\">Username</label>\n    <input type=\"text\" [(ngModel)]=\"user.username\" name=\"username\" class=\"form-control\" id=\"username\" placeholder=\"Username\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputEmail1\">Email address</label>\n    <input type=\"email\" [(ngModel)]=\"user.email\" name=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\n    <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"exampleInputPassword1\">Password</label>\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\" id=\"exampleInputPassword1\" placeholder=\"Password\">\n  </div>\n  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n</form>\n</div>\n"
+module.exports = "<div>\r\n<h2 class=\"page-header\">Edit your Profile</h2>\r\n<form (ngSubmit)=\"onUpdateSubmit()\" novalidate>\r\n  <div class=\"form-group\">\r\n    <label for=\"firstName\">First Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"user.firstName\" name=\"firstName\" class=\"form-control\" id=\"firstName\" placeholder=\"First Name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"lastName\">Last Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"user.lastName\" name=\"lastName\" class=\"form-control\" id=\"lastName\" placeholder=\"Last Name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"age\">Age</label>\r\n    <input type=\"number\" [(ngModel)]=\"user.age\" name=\"age\" class=\"form-control\" id=\"age\" placeholder=\"Age\" min=\"0\" max=\"200\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"favoriteFood\">What is your Favorite Food?</label>\r\n    <input type=\"text\" [(ngModel)]=\"user.favoriteFood\" name=\"favoriteFood\" class=\"form-control\" id=\"favoriteFood\" placeholder=\"Favorite Food\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"username\">Username</label>\r\n    <input type=\"text\" [(ngModel)]=\"user.username\" name=\"username\" class=\"form-control\" id=\"username\" placeholder=\"Username\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"exampleInputEmail1\">Email address</label>\r\n    <input type=\"email\" [(ngModel)]=\"user.email\" name=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\r\n    <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\r\n  </div>\r\n  <!-- <div class=\"form-group\">\r\n    <label for=\"exampleInputPassword1\">Password</label>\r\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\" id=\"exampleInputPassword1\" placeholder=\"Password\">\r\n  </div> -->\r\n  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\r\n</form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -759,22 +759,22 @@ var UpdateComponent = /** @class */ (function () {
         var _this = this;
         // Required Fields
         if (!this.validateService.validateSignup(this.user)) {
-            this._flashMessagesService.show("Please fill in all fields", { cssClass: "alert-danger", timeout: 3000 });
+            this._flashMessagesService.show("Please fill in all fields", { cssClass: "alert-danger", timeout: 2000 });
             return false;
         }
         // Validate Email
         if (!this.validateService.validateEmail(this.user.email)) {
-            this._flashMessagesService.show("Please use valid email", { cssClass: "alert-danger", timeout: 3000 });
+            this._flashMessagesService.show("Please use valid email", { cssClass: "alert-danger", timeout: 2000 });
             return false;
         }
         // Update user
         this.authService.updateUser(this.user).subscribe(function (data) {
             if (data.success) {
-                _this._flashMessagesService.show("Update Success!", { cssClass: "alert-success", timeout: 3000 });
+                _this._flashMessagesService.show("Update Success!", { cssClass: "alert-success", timeout: 2000 });
                 _this.router.navigate(["/profile"]);
             }
             else {
-                _this._flashMessagesService.show("Something went wrong", { cssClass: "alert-danger", timeout: 3000 });
+                _this._flashMessagesService.show("Something went wrong", { cssClass: "alert-danger", timeout: 2000 });
                 _this.router.navigate(["/update"]);
             }
         });
@@ -882,13 +882,13 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.signupUser = function (user) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append("Content-Type", "application/json");
-        return this.http.post("users/signup", user, { headers: headers })
+        return this.http.post("http://localhost:8080/users/signup", user, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append("Content-Type", "application/json");
-        return this.http.post("users/authenticate", user, { headers: headers })
+        return this.http.post("http://localhost:8080/users/authenticate", user, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthService.prototype.getProfile = function () {
@@ -896,7 +896,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append("Authorization", this.authToken);
         headers.append("Content-Type", "application/json");
-        return this.http.get("users/profile", { headers: headers })
+        return this.http.get("http://localhost:8080/users/profile", { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthService.prototype.storeUserData = function (token, user) {
@@ -920,7 +920,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.deleteUser = function (id) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append("Content-Type", "application/json");
-        return this.http.delete("users/profile/" + id, { headers: headers })
+        return this.http.delete("http://localhost:8080/users/profile/" + id, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthService.prototype.updateUser = function (user) {
@@ -928,7 +928,7 @@ var AuthService = /** @class */ (function () {
         this.loadToken();
         headers.append("Authorization", this.authToken);
         headers.append("Content-Type", "application/json");
-        return this.http.put("users/update/" + user._id, user, { headers: headers })
+        return this.http.put("http://localhost:8080/users/update/" + user._id, user, { headers: headers })
             .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (res) { return res.json(); }));
     };
     AuthService = __decorate([
@@ -1051,7 +1051,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/kyleliu/code/my_code/ssai interview/favorite-food/angular-src/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\kliu\Documents\favorite-food\angular-src\src\main.ts */"./src/main.ts");
 
 
 /***/ })
