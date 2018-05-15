@@ -1,9 +1,9 @@
 <h2 class="page-header">Dashboard</h2>
 <p>Welcome to your dashboard. Here are the other users on the Favorite Food App</p>
 <div class="row">
-  <div *ngFor="let user of users">
+  <div *ngFor="let user of users" class="col-md-4">
 
-    <div class="col-md-3">
+    <div >
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{ user.firstName + " " + user.lastName}}</h5>

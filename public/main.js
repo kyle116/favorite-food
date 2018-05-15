@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-navbar></app-navbar>\n<div class=\"container\">\n  <flash-messages></flash-messages>\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<app-navbar></app-navbar>\r\n<div class=\"container\">\r\n  <flash-messages></flash-messages>\r\n  <router-outlet></router-outlet>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -181,7 +181,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".card {\n  width: 18rem;\n  margin-bottom: 1.5rem;\n}\n\n.view-profile {\n  margin-top: .75rem;\n}\n"
+module.exports = ".card {\r\n  margin-bottom: 1.5rem;\r\n}\r\n\r\n.view-profile {\r\n  margin-top: .75rem;\r\n}\r\n"
 
 /***/ }),
 
@@ -192,7 +192,7 @@ module.exports = ".card {\n  width: 18rem;\n  margin-bottom: 1.5rem;\n}\n\n.view
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Dashboard</h2>\n<p>Welcome to your dashboard. Here are the other users on the Favorite Food App</p>\n<div class=\"row\">\n  <div *ngFor=\"let user of users\">\n\n    <div class=\"col-md-3\">\n      <div class=\"card\">\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">{{ user.firstName + \" \" + user.lastName}}</h5>\n          <ul class=\"list-group list-group-flush\">\n            <li class=\"list-group-item\">Age: {{ user.age }}</li>\n            <li class=\"list-group-item\">Favorite Food: {{ user.favoriteFood }}</li>\n          </ul>\n          <a [routerLink]=\"['/profile', user._id]\" class=\"btn btn-primary view-profile\">View Profile</a>\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n"
+module.exports = "<h2 class=\"page-header\">Dashboard</h2>\r\n<p>Welcome to your dashboard. Here are the other users on the Favorite Food App</p>\r\n<div class=\"row\">\r\n  <div *ngFor=\"let user of users\" class=\"col-md-4\">\r\n\r\n    <div >\r\n      <div class=\"card\">\r\n        <div class=\"card-body\">\r\n          <h5 class=\"card-title\">{{ user.firstName + \" \" + user.lastName}}</h5>\r\n          <ul class=\"list-group list-group-flush\">\r\n            <li class=\"list-group-item\">Age: {{ user.age }}</li>\r\n            <li class=\"list-group-item\">Favorite Food: {{ user.favoriteFood }}</li>\r\n          </ul>\r\n          <a [routerLink]=\"['/profile', user._id]\" class=\"btn btn-primary view-profile\">View Profile</a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -266,7 +266,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<main role=\"main\" class=\"container\">\n  <div class=\"jumbotron\">\n    <h1>Favorite Food App</h1>\n    <div *ngIf=\"!authService.loggedIn()\">\n      <p class=\"lead\">Welcome to the Favorite Food App. Sign up to get started!</p>\n       <a class=\"btn btn-primary\" role=\"button\" [routerLink]=\"['/signup']\">Signup!</a>\n    </div>\n    <div *ngIf=\"authService.loggedIn()\">\n      <p class=\"lead\">Welcome to the Favorite Food App. Go to your dashboard to see others on the app!</p>\n       <a class=\"btn btn-primary\" role=\"button\" [routerLink]=\"['/dashboard']\">Dashboard</a>\n    </div>\n  </div>\n</main>\n"
+module.exports = "<main role=\"main\" class=\"container\">\r\n  <div class=\"jumbotron\">\r\n    <h1>Favorite Food App</h1>\r\n    <div *ngIf=\"!authService.loggedIn()\">\r\n      <p class=\"lead\">Welcome to the Favorite Food App. Sign up to get started!</p>\r\n       <a class=\"btn btn-primary\" role=\"button\" [routerLink]=\"['/signup']\">Signup!</a>\r\n    </div>\r\n    <div *ngIf=\"authService.loggedIn()\">\r\n      <p class=\"lead\">Welcome to the Favorite Food App. Go to your dashboard to see others on the app!</p>\r\n       <a class=\"btn btn-primary\" role=\"button\" [routerLink]=\"['/dashboard']\">Dashboard</a>\r\n    </div>\r\n  </div>\r\n</main>\r\n"
 
 /***/ }),
 
@@ -336,7 +336,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Login</h2>\n<form class=\"form-signin\" (submit)=\"onLoginSubmit()\">\n  <div class=\"form-group\">\n    <label for=\"Username\">Username</label>\n    <input type=\"text\" class=\"form-control\" placeholder=\"Enter Username\" [(ngModel)]=\"username\" name=\"username\">\n  </div>\n  <div class=\"form-group\">\n  <label for=\"Password\">Password</label>\n  <input type=\"password\" class=\"form-control\" placeholder=\" Enter Password\" [(ngModel)]=\"password\" name=\"password\">\n  </div>\n  <input class=\"btn btn-lg btn-primary\" type=\"submit\" value=\"Login\">\n</form>\n"
+module.exports = "<h2 class=\"page-header\">Login</h2>\r\n<form class=\"form-signin\" (submit)=\"onLoginSubmit()\">\r\n  <div class=\"form-group\">\r\n    <label for=\"Username\">Username</label>\r\n    <input type=\"text\" class=\"form-control\" placeholder=\"Enter Username\" [(ngModel)]=\"username\" name=\"username\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n  <label for=\"Password\">Password</label>\r\n  <input type=\"password\" class=\"form-control\" placeholder=\" Enter Password\" [(ngModel)]=\"password\" name=\"password\">\r\n  </div>\r\n  <input class=\"btn btn-primary\" type=\"submit\" value=\"Login\">\r\n</form>\r\n"
 
 /***/ }),
 
@@ -418,7 +418,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "nav {\n  margin-bottom: 1.5rem;\n}\n"
+module.exports = "nav {\r\n  margin-bottom: 1.5rem;\r\n}\r\n"
 
 /***/ }),
 
@@ -429,7 +429,7 @@ module.exports = "nav {\n  margin-bottom: 1.5rem;\n}\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark  bg-dark\">\n  <a class=\"navbar-brand\" [routerLink]=\"['/']\">Favorite Food</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home <span class=\"sr-only\">(current)</span></a>\n      </li>\n    </ul>\n\n    <ul class=\"navbar-nav navbar-right\">\n      <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a>\n      </li>\n      <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\n      </li>\n\n      <li *ngIf=\"!authService.loggedIn()\"[routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/signup']\">Signup</a>\n      </li>\n      <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a>\n      </li>\n      <li *ngIf=\"authService.loggedIn()\">\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\n      </li>\n    </ul>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark  bg-dark\">\r\n  <a class=\"navbar-brand\" [routerLink]=\"['/']\">Favorite Food</a>\r\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarCollapse\" aria-controls=\"navbarCollapse\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarCollapse\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <li [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home <span class=\"sr-only\">(current)</span></a>\r\n      </li>\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav navbar-right\">\r\n      <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a>\r\n      </li>\r\n      <li *ngIf=\"authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\r\n      </li>\r\n\r\n      <li *ngIf=\"!authService.loggedIn()\"[routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/signup']\">Signup</a>\r\n      </li>\r\n      <li *ngIf=\"!authService.loggedIn()\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a>\r\n      </li>\r\n      <li *ngIf=\"authService.loggedIn()\">\r\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\r\n      </li>\r\n    </ul>\r\n\r\n  </div>\r\n</nav>\r\n"
 
 /***/ }),
 
@@ -499,7 +499,7 @@ var NavbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".delete-button {\n  margin-top: .5rem;\n}\n"
+module.exports = ".delete-button {\r\n  margin-top: .5rem;\r\n}\r\n"
 
 /***/ }),
 
@@ -510,7 +510,7 @@ module.exports = ".delete-button {\n  margin-top: .5rem;\n}\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.firstName + \" \" + user.lastName}}</h2>\n  <a *ngIf=\"userId === currentUserId\" class=\"\" [routerLink]=\"['/update']\">Edit Profile</a>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\n    <li class=\"list-group-item\">Favorite Food: {{user.favoriteFood}}</li>\n    <li class=\"list-group-item\">Age: {{user.age}}</li>\n  </ul>\n  <button *ngIf=\"userId === currentUserId\" type=\"button\" class=\"btn btn-danger delete-button\" (click)=\"deleteUser(user._id)\" name=\"button\">Delete</button>\n</div>\n"
+module.exports = "<div *ngIf=\"user\">\r\n  <h2 class=\"page-header\">{{user.firstName + \" \" + user.lastName}}</h2>\r\n  <a *ngIf=\"userId === currentUserId\" class=\"\" [routerLink]=\"['/update']\">Edit Profile</a>\r\n  <ul class=\"list-group\">\r\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\r\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\r\n    <li class=\"list-group-item\">Favorite Food: {{user.favoriteFood}}</li>\r\n    <li class=\"list-group-item\">Age: {{user.age}}</li>\r\n  </ul>\r\n  <button *ngIf=\"userId === currentUserId\" type=\"button\" class=\"btn btn-danger delete-button\" (click)=\"deleteUser(user._id)\" name=\"button\">Delete</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -614,7 +614,11 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = "<h2 class=\"page-header\">Sign Up</h2>\n<form (submit)=\"onSignupSubmit()\" novalidate>\n  <div class=\"form-group\">\n    <label for=\"firstName\">First Name</label>\n    <input type=\"text\" [(ngModel)]=\"firstName\" name=\"firstName\" class=\"form-control\" id=\"firstName\" placeholder=\"First Name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"lastName\">Last Name</label>\n    <input type=\"text\" [(ngModel)]=\"lastName\" name=\"lastName\" class=\"form-control\" id=\"lastName\" placeholder=\"Last Name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"age\">Age</label>\n    <input type=\"number\" [(ngModel)]=\"age\" name=\"age\" class=\"form-control\" id=\"age\" placeholder=\"Age\" min=\"0\" max=\"200\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"favoriteFood\">What is your Favorite Food?</label>\n    <input type=\"text\" [(ngModel)]=\"favoriteFood\" name=\"favoriteFood\" class=\"form-control\" id=\"favoriteFood\" placeholder=\"Favorite Food\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"username\">Username</label>\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\" id=\"username\" placeholder=\"Username\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"inputEmail1\">Email address</label>\n    <input type=\"email\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\" id=\"inputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\n    <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"inputPassword1\">Password</label>\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\" id=\"inputPassword1\" placeholder=\"Password\">\n  </div>\n  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n</form>\n"
+=======
+module.exports = "<h2 class=\"page-header\">Sign Up</h2>\r\n<form (submit)=\"onSignupSubmit()\" novalidate>\r\n  <div class=\"form-group\">\r\n    <label for=\"firstName\">First Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"firstName\" name=\"firstName\" class=\"form-control\" id=\"firstName\" placeholder=\"First Name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"lastName\">Last Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"lastName\" name=\"lastName\" class=\"form-control\" id=\"lastName\" placeholder=\"Last Name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"age\">Age</label>\r\n    <input type=\"number\" [(ngModel)]=\"age\" name=\"age\" class=\"form-control\" id=\"age\" placeholder=\"Age\" min=\"0\" max=\"200\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"favoriteFood\">What is your Favorite Food?</label>\r\n    <input type=\"text\" [(ngModel)]=\"favoriteFood\" name=\"favoriteFood\" class=\"form-control\" id=\"favoriteFood\" placeholder=\"Favorite Food\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"username\">Username</label>\r\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\" id=\"username\" placeholder=\"Username\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"exampleInputEmail1\">Email address</label>\r\n    <input type=\"email\" [(ngModel)]=\"email\" name=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\r\n    <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"exampleInputPassword1\">Password</label>\r\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\" id=\"exampleInputPassword1\" placeholder=\"Password\">\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\r\n</form>\r\n"
+>>>>>>> d7f293ca7905b2e33e38f404eb53225f1bce7e22
 
 /***/ }),
 
@@ -735,7 +739,11 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = "<div>\n<h2 class=\"page-header\">Edit your Profile</h2>\n<form (ngSubmit)=\"onUpdateSubmit()\" novalidate>\n  <div class=\"form-group\">\n    <label for=\"firstName\">First Name</label>\n    <input type=\"text\" [(ngModel)]=\"user.firstName\" name=\"firstName\" class=\"form-control\" id=\"firstName\" placeholder=\"First Name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"lastName\">Last Name</label>\n    <input type=\"text\" [(ngModel)]=\"user.lastName\" name=\"lastName\" class=\"form-control\" id=\"lastName\" placeholder=\"Last Name\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"age\">Age</label>\n    <input type=\"number\" [(ngModel)]=\"user.age\" name=\"age\" class=\"form-control\" id=\"age\" placeholder=\"Age\" min=\"0\" max=\"200\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"favoriteFood\">What is your Favorite Food?</label>\n    <input type=\"text\" [(ngModel)]=\"user.favoriteFood\" name=\"favoriteFood\" class=\"form-control\" id=\"favoriteFood\" placeholder=\"Favorite Food\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"username\">Username</label>\n    <input type=\"text\" [(ngModel)]=\"user.username\" name=\"username\" class=\"form-control\" id=\"username\" placeholder=\"Username\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"inputEmail1\">Email address</label>\n    <input type=\"email\" [(ngModel)]=\"user.email\" name=\"email\" class=\"form-control\" id=\"inputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\n    <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\n  </div>\n  <div class=\"form-group\">\n    <label for=\"inputPassword1\">Password (leave blank if you do not want to change your password)</label>\n    <input type=\"password\" [(ngModel)]=\"user.password\" name=\"password\" class=\"form-control\" id=\"inputPassword1\" placeholder=\"Password\">\n  </div>\n  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n</form>\n</div>\n"
+=======
+module.exports = "<div>\r\n<h2 class=\"page-header\">Edit your Profile</h2>\r\n<form (ngSubmit)=\"onUpdateSubmit()\" novalidate>\r\n  <div class=\"form-group\">\r\n    <label for=\"firstName\">First Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"user.firstName\" name=\"firstName\" class=\"form-control\" id=\"firstName\" placeholder=\"First Name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"lastName\">Last Name</label>\r\n    <input type=\"text\" [(ngModel)]=\"user.lastName\" name=\"lastName\" class=\"form-control\" id=\"lastName\" placeholder=\"Last Name\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"age\">Age</label>\r\n    <input type=\"number\" [(ngModel)]=\"user.age\" name=\"age\" class=\"form-control\" id=\"age\" placeholder=\"Age\" min=\"0\" max=\"200\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"favoriteFood\">What is your Favorite Food?</label>\r\n    <input type=\"text\" [(ngModel)]=\"user.favoriteFood\" name=\"favoriteFood\" class=\"form-control\" id=\"favoriteFood\" placeholder=\"Favorite Food\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"username\">Username</label>\r\n    <input type=\"text\" [(ngModel)]=\"user.username\" name=\"username\" class=\"form-control\" id=\"username\" placeholder=\"Username\">\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"exampleInputEmail1\">Email address</label>\r\n    <input type=\"email\" [(ngModel)]=\"user.email\" name=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\r\n    <small id=\"emailHelp\" class=\"form-text text-muted\">We'll never share your email with anyone else.</small>\r\n  </div>\r\n  <div class=\"form-group\">\r\n    <label for=\"exampleInputPassword1\">Password</label>\r\n    <input type=\"password\" [(ngModel)]=\"user.password\" name=\"password\" class=\"form-control\" id=\"exampleInputPassword1\" placeholder=\"Password\">\r\n  </div>\r\n  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\r\n</form>\r\n</div>\r\n"
+>>>>>>> d7f293ca7905b2e33e38f404eb53225f1bce7e22
 
 /***/ }),
 
@@ -1099,7 +1107,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/kyleliu/code/my_code/ssai interview/favorite-food/angular-src/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\kliu\Documents\favorite-food\angular-src\src\main.ts */"./src/main.ts");
 
 
 /***/ })
