@@ -4,8 +4,6 @@ MEAN Stack app created with full CRUD (Create/Read/Update/Delete) functionality.
 
 Try it out here: http://favorite-food-ssai.herokuapp.com/
 
-Link to App: http://favorite-food-ssai.herokuapp.com/
-
 ## Technologies
 * MongoDB
 * Express
