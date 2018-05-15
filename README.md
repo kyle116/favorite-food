@@ -1,6 +1,6 @@
 # Favorite Food App
 
-MEAN Stack app created for with full CRUD (Create/Read/Update/Delete) functionality.
+MEAN Stack app created with full CRUD (Create/Read/Update/Delete) functionality.
 
 ## Technologies
 * MongoDB
