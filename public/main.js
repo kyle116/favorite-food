@@ -181,7 +181,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".card {\n  width: 18rem;\n  margin-bottom: 1.5rem;\n}\n\n.view-profile {\n  margin-top: .75rem;\n}\n"
 
 /***/ }),
 
@@ -192,7 +192,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Dashboard</h2>\n<p>Welcome to your dashboard. Here are the other users on the Favorite Food App</p>\n<div class=\"row\">\n  <div *ngFor=\"let user of users\">\n\n    <div class=\"col-md-3\">\n      <div class=\"card\" style=\"width: 18rem;\">\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">{{ user.firstName + \" \" + user.lastName}}</h5>\n          <ul class=\"list-group list-group-flush\">\n            <li class=\"list-group-item\">Age: {{ user.age }}</li>\n            <li class=\"list-group-item\">Favorite Food: {{ user.favoriteFood }}</li>\n          </ul>\n          <a [routerLink]=\"['/profile', user._id]\" class=\"btn btn-primary\">View Profile</a>\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n"
+module.exports = "<h2 class=\"page-header\">Dashboard</h2>\n<p>Welcome to your dashboard. Here are the other users on the Favorite Food App</p>\n<div class=\"row\">\n  <div *ngFor=\"let user of users\">\n\n    <div class=\"col-md-3\">\n      <div class=\"card\">\n        <div class=\"card-body\">\n          <h5 class=\"card-title\">{{ user.firstName + \" \" + user.lastName}}</h5>\n          <ul class=\"list-group list-group-flush\">\n            <li class=\"list-group-item\">Age: {{ user.age }}</li>\n            <li class=\"list-group-item\">Favorite Food: {{ user.favoriteFood }}</li>\n          </ul>\n          <a [routerLink]=\"['/profile', user._id]\" class=\"btn btn-primary view-profile\">View Profile</a>\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -499,7 +499,7 @@ var NavbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".delete-button {\n  margin-top: .5rem;\n}\n"
 
 /***/ }),
 
@@ -510,7 +510,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.firstName + \" \" + user.lastName}}</h2>\n  <a *ngIf=\"userId === currentUserId\" class=\"\" [routerLink]=\"['/update']\">Edit Profile</a>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\n    <li class=\"list-group-item\">Favorite Food: {{user.favoriteFood}}</li>\n    <li class=\"list-group-item\">Age: {{user.age}}</li>\n  </ul>\n  <button *ngIf=\"userId === currentUserId\" type=\"button\" class=\"btn btn-danger\" (click)=\"deleteUser(user._id)\" name=\"button\">Delete</button>\n</div>\n"
+module.exports = "<div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.firstName + \" \" + user.lastName}}</h2>\n  <a *ngIf=\"userId === currentUserId\" class=\"\" [routerLink]=\"['/update']\">Edit Profile</a>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\n    <li class=\"list-group-item\">Favorite Food: {{user.favoriteFood}}</li>\n    <li class=\"list-group-item\">Age: {{user.age}}</li>\n  </ul>\n  <button *ngIf=\"userId === currentUserId\" type=\"button\" class=\"btn btn-danger delete-button\" (click)=\"deleteUser(user._id)\" name=\"button\">Delete</button>\n</div>\n"
 
 /***/ }),
 
