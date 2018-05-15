@@ -2,6 +2,8 @@
 
 MEAN Stack app created with full CRUD (Create/Read/Update/Delete) functionality.
 
+Link to App: http://favorite-food-ssai.herokuapp.com/
+
 ## Technologies
 * MongoDB
 * Express
@@ -10,4 +12,4 @@ MEAN Stack app created with full CRUD (Create/Read/Update/Delete) functionality.
 * JavaScript
 * HTML
 * CSS
-* Boostrap
+* Bootstrap
